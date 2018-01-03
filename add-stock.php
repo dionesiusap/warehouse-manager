@@ -103,7 +103,7 @@
                         
                         if (mysqli_query($conn, $sql)) {
                             echo "<div class=\"alert alert-success\" style=\"width:100%;\"><strong>Success!</strong> Item stock database is successfully updated.</p></div>";
-                            echo "<div class=\"search-table\" style=\"margin:auto;\">";
+                            echo "<div class=\"info-table\" style=\"margin:auto;width:75%;\">";
                             echo "<table class=\"table\">";
                             echo "<tr><td><b>Item ID<b></td><td>". $row['itemid'] . "</td></tr>";
                             echo "<tr><td><b>Item Name<b></td><td>". $row['name'] . "</td></tr>";
