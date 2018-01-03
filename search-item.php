@@ -38,15 +38,15 @@
     $itemid = $name = "";
     $where = "";
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (!empty($_POST["itemid"])) {
-            $itemid = test_input($_POST["itemid"]);
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        if (!empty($_GET["itemid"])) {
+            $itemid = test_input($_GET["itemid"]);
             $where = "WHERE itemid = '" . $itemid . "'";
         }
 
-        if (!empty($_POST["name"])) {
-            $name = test_input($_POST["name"]);
-            if (!empty($_POST["itemid"])) {
+        if (!empty($_GET["name"])) {
+            $name = test_input($_GET["name"]);
+            if (!empty($_GET["itemid"])) {
                 $where .= " AND UPPER(name) LIKE UPPER('%" . $name . "%')";
             }
             else {
@@ -63,7 +63,7 @@
     }
     ?>
 
-    <form class="form-horizontal" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <form class="form-horizontal" method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <div class="form-group">
             <label class="control-label col-sm-2" for="id">Item ID</label>
             <div class="col-sm-10">
@@ -76,7 +76,7 @@
                 <input type="text" name="name" class="form-control" value="<?php echo $name;?>" placeholder="Item name">
             </div>
         </div>
-        <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+        <input class="btn btn-primary" type="submit" name="search" value="Search">
     </form>
 
     <?php
