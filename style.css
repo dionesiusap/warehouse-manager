@@ -1,0 +1,49 @@
+.pagetitle {
+    margin: auto;
+    width: 65%;
+}
+
+form {
+    margin: auto;
+    width: 55%;
+    padding: 10px 0px;
+}
+
+.alert {
+    margin: auto;
+    width: 65%;
+}
+
+.info-table {
+    margin: auto;
+    width: 55%;
+}
+
+.error {
+    color: #FF0000;
+}
+
+/*.success {
+    text-align: center;
+    background-color: #b3ffb3;
+    border-color: #009900;
+}
+
+.invalid {
+    text-align: center;
+    background-color: #ffb3b3;
+    border-color: #990000;
+}*/
+
+img {
+    margin: auto;
+}
+
+.footer {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
