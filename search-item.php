@@ -23,13 +23,14 @@
             <li><a href="new-item.php">New Item</a></li>
             <li><a href="add-stock.php">Items In</a></li>
             <li><a href="item-out.php"">Items Out</a></li>
+            <li><a href="product-details.php"">Product Details</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <div class="pagetitle">
-        <h2 class="text-justify">Search Item<br><small>Type in Item ID or Item Name then click Search.</small></h2>
+        <h2 class="text-justify">Search Item<br><small>Search products either by Item ID or item name then click Search.</small></h2>
     </div>
 
     <?php
@@ -63,20 +64,17 @@
     }
     ?>
 
-    <form class="form-horizontal" method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <form class="form" method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <div class="form-group">
-            <label class="control-label col-sm-2" for="id">Item ID</label>
-            <div class="col-sm-10">
-                <input type="text" name="itemid" class="form-control" value="<?php echo $itemid;?>" placeholder="XXXX-0000-00">
-            </div>
+            <label class="control-label" for="id">Item ID</label>
+            <input type="text" name="itemid" class="form-control" value="<?php echo $itemid;?>" placeholder="XXXX-0000-00">
         </div>
         <div class="form-group">
-            <label class="control-label col-sm-2" for="name">Name</label>
-            <div class="col-sm-10">
-                <input type="text" name="name" class="form-control" value="<?php echo $name;?>" placeholder="Item name">
-            </div>
+            <label class="control-label" for="name">Name</label>
+            <input type="text" name="name" class="form-control" value="<?php echo $name;?>" placeholder="Item name">
         </div>
         <input class="btn btn-primary" type="submit" name="search" value="Search">
+        <a href="search-item.php" class="btn btn-default" role="button">Clear</a>
     </form>
 
     <?php
@@ -105,14 +103,14 @@
     echo "<table class=\"table table-hover\">";
     echo "<thead>";
     echo "<tr>";
-    echo "<th>Item ID</th><th>Item Name</th><th>Packaging</th><th>Price</th><th>Stock</th>";
+    echo "<th>Item ID</th><th>Item Name</th><th>Packaging</th><th>Price</th><th>Stock</th><th>Details</th>";
     echo "</tr>";
     echo "</thead>";
     if (mysqli_num_rows($result) != 0) {
         echo "<tbody>";
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
-            echo "<td>" .$row['itemid']. "</td><td>" .$row['name']. "</td><td>" .$row['package']. "</td><td>" .$row['price']. "</td><td>" .$row['stock']. "</td>";
+            echo "<td>" .$row['itemid']. "</td><td>" .$row['name']. "</td><td>" .$row['package']. "</td><td>" .$row['price']. "</td><td>" .$row['stock']. "</td><td><a href=\"product-details.php?itemid=" .$row['itemid']. "&search=Search\" target=\"_blank\" class=\"btn btn-info btn-xs\" role=\"button\">Details</a></td>";
             echo "</tr>";
         }
         echo "</tbody>";
@@ -122,7 +120,7 @@
     else {
         echo "</table>";
         echo "</div>";
-        echo "Not found";
+        echo "<div class=\"alert alert-danger\"><strong>Item not found.</strong> Try another search term.</p></div>";
     }
     ?>
 

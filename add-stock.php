@@ -23,6 +23,7 @@
             <li><a href="new-item.php">New Item</a></li>
             <li class="active"><a href="#">Items In</a></li>
             <li><a href="item-out.php"">Items Out</a></li>
+            <li><a href="product-details.php"">Product Details</a></li>
         </ul>
     </div>
 </nav>

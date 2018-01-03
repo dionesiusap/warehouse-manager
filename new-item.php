@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $stock = test_input($_POST["stock"]);
         // check if e-mail address is well-formed
-        if (!preg_match("/^[1-9][0-9]{0,4}$/", $stock)) {
+        if (!preg_match("/^[0-9]{1,5}$/", $stock)) {
             $stockErr = "Invalid format (only numbers allowed, maximum length 5 digits)";
         }
     }
@@ -89,6 +89,7 @@ function test_input($data) {
             <li class="active"><a href="#">New Item</a></li>
             <li><a href="add-stock.php">Items In</a></li>
             <li><a href="item-out.php">Items Out</a></li>
+            <li><a href="product-details.php"">Product Details</a></li>
         </ul>
     </div>
 </nav>
@@ -141,7 +142,7 @@ function test_input($data) {
         <div class="form-group">
             <label class="control-label col-sm-2" for="stock">Stock<span class="error">*</span></label>
             <div class="col-sm-10">
-                <input type="text" name="stock" class="form-control" value="<?php echo $stock;?>">
+                <input type="text" name="stock" class="form-control" value="<?php echo $stock;?>" placeholder="Product quantity">
                 <span class="error"><?php echo $stockErr;?></span>
             </div>
         </div>
