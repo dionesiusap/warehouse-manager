@@ -7,7 +7,7 @@ Author: Dionesius Agung
 ## Getting Started
 Assumption: you already have XAMPP or other web/HTTP server installed on your computer.  
 
-###Setup
+### Setup
 Go to `/htdocs` folder in xampp directory. In windows, the path is usually `C:/xampp/htdocs/`.  
 To go to the directory with command line type in:
 ```
@@ -21,6 +21,8 @@ Then clone or download this repository in htdocs folder.
 1. Run XAMPP Control Panel then start Apache and MySQL. Should any error occurs (for example, regarding the port, etc.) just google for solutions.  
 2. Go to your browser, go to `localhost:port/` or `127.0.0.1:port/` (change port with yours).  
 3. If it redirects to `localhost:port/dashboard/` or `127.0.0.1:port/dashboard` it means your Apache is working well.
+
+## Using the Application
 
 ### Creating Database
 1. Go to `localhost:port/` then click phpmyadmin.  
