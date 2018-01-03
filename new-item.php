@@ -150,22 +150,10 @@ function test_input($data) {
     </form>
 
     <?php
+    require 'dbconnect.php';
+    
     if ($itemidErr == "" && $nameErr == "" && $pkgErr == "" && $unitErr == "" && $priceErr == "" && $stockErr == "") {
         if ($itemid != "" && $name != "" && $pkg != "" && $unit != "" && $price != "" && $stock != "") {
-
-
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "test-item";
-
-            // Create connection
-            $conn = mysqli_connect($servername, $username, $password, $dbname);
-            // Check connection
-            if (!$conn) {
-                die("Connection failed: " . mysqli_connect_error());
-            }
-
             $sql = "INSERT INTO itemlist (itemid, name, price, package, stock)
             VALUES ('" . $itemid . "', '" . $name . "', " . $price . ", '" . $packaging . "', " . $stock . ")";
 

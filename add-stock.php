@@ -90,16 +90,7 @@
             </form>
 
             <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "test-item";
-
-            $conn = mysqli_connect($servername, $username, $password, $dbname);
-            // Check connection
-            if (!$conn) {
-                die("Connection failed: " . mysqli_connect_error());
-            }
+            require 'dbconnect.php';
 
             $sql = "SELECT itemid, name, package, price, stock FROM itemlist WHERE itemid = '" . $idsearch . "'";
             $result = mysqli_query($conn, $sql);
