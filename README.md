@@ -1,7 +1,7 @@
 # Warehouse Manager
 Description: A simple item/inventory database manager for stores and shops.  
 Latest version: Alpha v0.1  
-Date: January 3, 2018  
+Date: January 4, 2018  
 Author: Dionesius Agung
 
 ## Getting Started
@@ -28,13 +28,13 @@ Then clone or download this repository in htdocs folder.
 1. Go to `localhost:port/` then click phpmyadmin.  
 2. Create new database then create new table. In this project, my database name is `test-item`.  
 3. Create new table, this project uses 1 table called `itemlist` which consists of 5 fields. The fields are:  
-Field Name   | Type         | Null | Default | Key  
------------- | ------------ | ---- | ------- | ---  
-itemid       | varchar(20)  | No   | None    | Yes  
-name         | varchar(100) | No   | None    | No  
-price        | int(5)       | No   | None    | No  
-package      | varchar(16)  | No   | None    | No   
-stock        | int(5)       | No   | None    | No  
+| Field Name   | Type         | Null | Default | Key |  
+| ------------ | ------------ | ---- | ------- | --- |  
+| ---itemid--- | varchar(20)- | No-- | None--- | Yes |  
+| ----name---- | varchar(100) | No-- | None--- | No- |  
+| ---price---- | int(10)----- | No-- | None--- | No- |  
+| --package--- | varchar(16)- | No-- | None--- | No- |  
+| ---stock---- | int(5)------ | No-- | None--- | No- |
 
 ### Opening Web Page
 Go to `localhost:port/warehouse-manager/search-item.php`.
